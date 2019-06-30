@@ -1,4 +1,4 @@
-﻿namespace Ultimat.Api.Repositories
+﻿namespace Ultimat.Api.Services
 {
     public interface IUserService
     {

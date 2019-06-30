@@ -12,6 +12,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.Swagger;
+using Ultimat.Api.Repositories;
+using Ultimat.Api.Services;
 
 namespace Ultimat.Api
 {
@@ -39,6 +41,9 @@ namespace Ultimat.Api
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 swagger.IncludeXmlComments(xmlPath);
             });
+
+            services.AddSingleton<IShoppingListRepository, ShoppingListRepository>(); // This is a singleton since we use a variable as the database in the initial demo
+            services.AddTransient<IShoppingListService, ShoppingListService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
