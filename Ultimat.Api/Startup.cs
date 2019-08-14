@@ -35,7 +35,7 @@ namespace Ultimat.Api
             {
                 swagger.DescribeAllEnumsAsStrings();
                 swagger.DescribeAllParametersInCamelCase();
-                swagger.SwaggerDoc("v1", new Info { Title = "TodoList", Version = "v1" });
+                swagger.SwaggerDoc("v1", new Info { Title = "UltiMAT", Version = "v1" });
 
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
